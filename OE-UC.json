@@ -1,0 +1,47 @@
+[
+  {
+    "symbol": "MACHINERY",
+    "volumePerUnit": 2,
+    "pricePerUnit": 393,
+    "spread": 9,
+    "purchasePricePerUnit": 402,
+    "sellPricePerUnit": 384,
+    "quantityAvailable": 31390
+  },
+  {
+    "symbol": "FUEL",
+    "volumePerUnit": 1,
+    "pricePerUnit": 26,
+    "spread": 1,
+    "purchasePricePerUnit": 27,
+    "sellPricePerUnit": 25,
+    "quantityAvailable": 38108
+  },
+  {
+    "symbol": "ELECTRONICS",
+    "volumePerUnit": 1,
+    "pricePerUnit": 80,
+    "spread": 9,
+    "purchasePricePerUnit": 89,
+    "sellPricePerUnit": 71,
+    "quantityAvailable": 36386
+  },
+  {
+    "symbol": "ZUCO_CRYSTALS",
+    "volumePerUnit": 1,
+    "pricePerUnit": 38778,
+    "spread": 2766,
+    "purchasePricePerUnit": 41544,
+    "sellPricePerUnit": 36012,
+    "quantityAvailable": 16
+  },
+  {
+    "symbol": "SHIP_PARTS",
+    "volumePerUnit": 4,
+    "pricePerUnit": 2560,
+    "spread": 66,
+    "purchasePricePerUnit": 2626,
+    "sellPricePerUnit": 2494,
+    "quantityAvailable": 13
+  }
+]
