@@ -296,6 +296,7 @@ function Get-FuelLevel {
 
 
 
+$Metals = (Get-CurrentCargo -shipId $shipId | Where-Object { $_.good -eq "METALS" }).quantity
 
 
 
@@ -304,17 +305,13 @@ function Start-METALS {
         # Parameter help description
         [Parameter(Mandatory = $true)]
         [string]
-        $shipId
+        $Metals
     )
-    $Metals = (Get-CurrentCargo -shipId $shipId | Where-Object { $_.good -eq "METALS" }).quantity
+    if ($Metals -lt "5")
+     Get-Cargo -shipId $shipId -good "METALS" -quantity (5 - $Metals) | Out-Null
+    return "Purchased $(5 - $Metals) metal"
 
-    if ($Metals -lt "5") {
-        Get-Cargo -shipId $shipId -good "METALS" -quantity (5 - $Metals) | Out-Null
-        return "Purchased $(5 - $Metals) metal"
-    }
-
-    else {
- (Get-CurrentCargo.quantity -gt "5")
+    else { (Get-CurrentCargo.quantity -gt "5")
         return "Metal is already 5+"
     }
     else { (Read-MarketPlaceInfo.symbol -eq "METALS")
