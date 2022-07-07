@@ -287,15 +287,15 @@ function Start-METALS {
     if ($Metals -lt "2") {
   
         Get-Cargo -shipId $shipId  -quantity (5 - $Metals) | Out-Null
-        return "Purchased $(5 - $Metals) metal"     
+        return "Purchased $(15 - $Metals) metal"     
     }
     else {
         return "Metal is already 5+"
-     }
-    # elseif {
-    #    "Metals do not exist on this planet"
-    # }
-    # return    
+    }
+    elseif {
+       "Metals do not exist on this planet"
+    }
+    return    
 }
 
 
