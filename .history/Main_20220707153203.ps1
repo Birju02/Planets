@@ -285,7 +285,10 @@ function Get-FuelLevel {
 }
 
 
-function Start-SellMetals ($shipId) {    
+
+
+
+function Start-METALS ($shipId) {    
     $Metals = (Get-CurrentCargo -shipId $shipId | Where-Object { $_.good -eq "METALS" }).quantity
     if ($Metals -lt "5") {
         Get-Cargo -shipId $shipId -good "METALS" -quantity (5 - $Metals) | Out-Null
@@ -295,15 +298,13 @@ function Start-SellMetals ($shipId) {
 (Get-CurrentCargo.quantity -gt "5")
         return "Metal is already 5+"
     }
-    else { (Read-MarketPlaceInfo -ne "METALS").symbol
+    else { (Read-MarketPlaceInfo.symbol -eq "METALS")
         return "Metals do not exist on this planet"
     }
-    elseif { (Read-MarketPlaceInfo -eq "0").quantityAvailable
+    elseif { (Read-MarketPlaceInfo.quantityAvailable -eq "0") 
         return "Sorry, this item has run out on this planet"
     }
 }
-
-
 
 
 

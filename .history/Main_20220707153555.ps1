@@ -295,10 +295,10 @@ function Start-SellMetals ($shipId) {
 (Get-CurrentCargo.quantity -gt "5")
         return "Metal is already 5+"
     }
-    else { (Read-MarketPlaceInfo -ne "METALS").symbol
+    else { (Read-MarketPlaceInfo.symbol -ne "METALS")
         return "Metals do not exist on this planet"
     }
-    elseif { (Read-MarketPlaceInfo -eq "0").quantityAvailable
+    elseif { (Read-MarketPlaceInfo.marketplace.quantityAvailable -eq "0") 
         return "Sorry, this item has run out on this planet"
     }
 }
